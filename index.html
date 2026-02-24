@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice AI Survey - Earn $100 in Gift Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0a0a12 0%, #12121f 50%, #0a0a12 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 span {
+            color: #7c5cff;
+        }
+
+        .header p {
+            color: #a0a0b0;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .reward-banner {
+            background: linear-gradient(135deg, #7c5cff20 0%, #7c5cff10 100%);
+            border: 1px solid #7c5cff40;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .reward-banner h2 {
+            color: #7c5cff;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .reward-items {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .reward-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .reward-item .amount {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .reward-item .desc {
+            color: #a0a0b0;
+            font-size: 0.9rem;
+        }
+
+        .checkmark {
+            color: #7c5cff;
+            font-size: 1.2rem;
+        }
+
+        .form-card {
+            background: #15151f;
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid #252535;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .form-group .hint {
+            font-size: 0.85rem;
+            color: #808090;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0a0a12;
+            border: 1px solid #303045;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #7c5cff;
+            box-shadow: 0 0 0 3px #7c5cff30;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237c5cff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+        }
+
+        select option {
+            background: #15151f;
+            color: #ffffff;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #0a0a12;
+            border: 1px solid #303045;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .radio-option:hover {
+            border-color: #7c5cff60;
+            background: #12121f;
+        }
+
+        .radio-option input[type="radio"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #505065;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .radio-option input[type="radio"]:checked {
+            border-color: #7c5cff;
+        }
+
+        .radio-option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: #7c5cff;
+            border-radius: 50%;
+        }
+
+        .radio-option span {
+            color: #d0d0e0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #7c5cff 0%, #9070ff 100%);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px #7c5cff40;
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #606070;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #7c5cff;
+            text-decoration: none;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #303045, transparent);
+            margin: 28px 0;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7c5cff;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .reward-items {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .form-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Quick Survey for <span>Voice AI</span></h1>
+            <p>Help us understand your business needs and earn gift cards for your time.</p>
+        </div>
+
+        <div class="reward-banner">
+            <h2>Earn Up To $100 in Gift Cards</h2>
+            <div class="reward-items">
+                <div class="reward-item">
+                    <span class="checkmark">&#10003;</span>
+                    <span class="amount">$50</span>
+                    <span class="desc">for completing this survey</span>
+                </div>
+                <div class="reward-item">
+                    <span class="checkmark">&#10003;</span>
+                    <span class="amount">$50</span>
+                    <span class="desc">for a discovery call (if qualified)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <form action="https://formspree.io/f/xbdaqarz" method="POST">
+
+                <div class="section-title">Contact Information</div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Business Email</label>
+                    <input type="email" id="email" name="email" required placeholder="john@company.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" required placeholder="Acme Inc.">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                </div>
+
+                <div class="section-divider"></div>
+                <div class="section-title">Call Volume & Operations</div>
+
+                <div class="form-group">
+                    <label for="call_volume">How many inbound calls does your business receive per day?</label>
+                    <select id="call_volume" name="call_volume" required>
+                        <option value="" disabled selected>Select call volume</option>
+                        <option value="1-10">1-10 calls</option>
+                        <option value="11-25">11-25 calls</option>
+                        <option value="26-50">26-50 calls</option>
+                        <option value="51-100">51-100 calls</option>
+                        <option value="100+">100+ calls</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="industry">What industry is your business in?</label>
+                    <select id="industry" name="industry" required>
+                        <option value="" disabled selected>Select your industry</option>
+                        <option value="construction">Construction / Building Materials</option>
+                        <option value="home_services">Home Services (Plumbing, HVAC, Electrical)</option>
+                        <option value="landscaping">Landscaping / Lawn Care</option>
+                        <option value="field_services">Field Services / Contractors</option>
+                        <option value="cleaning">Commercial / Residential Cleaning</option>
+                        <option value="financial">Financial Services</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="real_estate">Real Estate</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="section-divider"></div>
+                <div class="section-title">Decision Making</div>
+
+                <div class="form-group">
+                    <label>Are you the decision maker for technology/operations at your company?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="decision_maker" value="yes" required>
+                            <span>Yes, I make these decisions</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="decision_maker" value="influence">
+                            <span>No, but I influence these decisions</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="decision_maker" value="no">
+                            <span>No, someone else handles this</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>If qualified, could you arrange a discovery call with a decision maker?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="can_arrange_dm" value="yes" required>
+                            <span>Yes, I can arrange that</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="can_arrange_dm" value="i_am_dm">
+                            <span>I am the decision maker</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="can_arrange_dm" value="unlikely">
+                            <span>That would be difficult</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+                <div class="section-title">Voice AI Interest</div>
+
+                <div class="form-group">
+                    <label>Would you consider using Voice AI agents to handle after-hours calls?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="after_hours_interest" value="very_interested" required>
+                            <span>Very interested - we miss calls after hours</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="after_hours_interest" value="somewhat">
+                            <span>Somewhat interested</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="after_hours_interest" value="not_interested">
+                            <span>Not interested</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Would you consider Voice AI agents during business hours?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="business_hours_interest" value="yes_supplement" required>
+                            <span>Yes, to supplement our team</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="business_hours_interest" value="yes_replace">
+                            <span>Yes, to handle all calls</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="business_hours_interest" value="after_hours_only">
+                            <span>Only for after-hours</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="business_hours_interest" value="not_interested">
+                            <span>Not interested</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>What systems would the AI need to integrate with?</label>
+                    <p class="hint">Select all that apply or describe below</p>
+                    <select id="integrations" name="integrations">
+                        <option value="" disabled selected>Select primary system</option>
+                        <option value="salesforce">Salesforce</option>
+                        <option value="hubspot">HubSpot</option>
+                        <option value="custom_crm">Custom CRM</option>
+                        <option value="spreadsheets">Spreadsheets (Google Sheets, Excel)</option>
+                        <option value="scheduling">Scheduling Software</option>
+                        <option value="erp">ERP System</option>
+                        <option value="none">No specific system</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <button type="submit" class="submit-btn">Submit Survey & Claim Your $50</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>Powered by <a href="https://voiceanything.ai" target="_blank">VoiceAnything.ai</a></p>
+        </div>
+    </div>
+</body>
+</html>
